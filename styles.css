@@ -260,6 +260,14 @@ nav a.active {
 	  font-size: 0.9em;
 	}
 	
+.person-bio, 
+.description, 
+.title {
+  word-wrap: break-word;   
+  overflow-wrap: break-word;
+  hyphens: auto;           
+}
+	
 
 
     @media (max-width: 700px) {
@@ -275,17 +283,18 @@ nav a.active {
       }
 	.sub-box {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 9px;
+    align-items: center; 
+    gap: 12px;           
     padding: 13px 7px;
     max-width: 99vw;
-	text-align: center;
+    text-align: center;
   }
-  .icon-text {
+ .icon-text {
     width: auto;
     min-width: 0;
-    align-items: center;
-    justify-content: center;
+    align-items: center;     
+    justify-content: center; 
+    margin-bottom: 8px;     
   }
   .description {
     margin-left: 0;
@@ -294,6 +303,9 @@ nav a.active {
 	
   }
     }
+	
+
+
 
 	
 	  /* Responsive	  */
@@ -312,11 +324,20 @@ nav a.active {
         font-size: 1.45em;
         margin-top: 19px;
       }
-      nav { margin-bottom: 26px; }
-      .people-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+       nav {
+    margin-bottom: 26px;
+  }
+  nav a {
+    display: inline-block;     /* or block if you want stacked */
+    margin: 6px 12px;          /* better spacing between links */
+    padding: 8px 12px;         /* bigger clickable area */
+    font-size: 1.1em;          /* slightly larger font for readability */
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  nav a.active {
+    box-shadow: 0 6px 14px rgba(145, 110, 200, 0.12); /* a bit stronger shadow */
+  }
       }
       .person-card {
         width: 93vw;
@@ -325,6 +346,20 @@ nav a.active {
 		text-align: center;
       }
     }
+	
+	.person-card, .index-card {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+	
+	@media (max-width: 380px) {
+  nav a {
+    display: block;
+    margin: 6px auto;
+    width: 80%; /* center the buttons */
+  }
+}
+
 	
 
 	
