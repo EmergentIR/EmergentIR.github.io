@@ -69,28 +69,117 @@
       font-size: 2.4em;
       letter-spacing: 2px;
     }
+	
+	
+	
 	/* Navigation tabs layout*/	
-    nav {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 1.12em;
-    }
-    nav a {
-      color: var(--button-color); 
-      text-decoration: none;
-      margin: 0 8px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      transition: background 0.15s;
-    }
+	/* Navigation container */
+nav {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.12em;
+}
+
+/* Navigation list */
+nav ul {
+  display: flex; 
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Navigation links */
+nav a {
+  color: var(--button-color);
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  display: inline-block;
+}
+
+/* Active link */
 nav a.active {
-	  background-color: var(--buttonactive-color); 
-	  box-shadow: 0 4px 12px rgba(145, 110, 200, 0.07); 
-	}
-    nav a:hover {
-      background-color: var(--buttonhover-color); 
-	  box-shadow: 0 4px 8px rgba(145, 110, 200, 0.07);
-    }
+  background-color: var(--buttonactive-color);
+  box-shadow: 0 4px 12px rgba(145, 110, 200, 0.07);
+}
+
+/* Hover state */
+nav a:hover {
+  background-color: var(--buttonhover-color);
+  box-shadow: 0 4px 8px rgba(145, 110, 200, 0.07);
+}
+
+.hamburger {
+  display: none;            /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+/* Hamburger bars */
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Hover and focus */
+.hamburger:hover span,
+.hamburger:focus span {
+  background-color: var(--buttonhover-color);
+}
+
+/* Optional: Animate hamburger to X when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* hide horizontal menu on smaller screens */
+    flex-direction: column; /* stack links vertically when shown */
+    padding: 0;
+  }
+  nav ul.active {
+    display: flex; /* show menu when active */
+  }
+  .hamburger {
+    display: block; /* show hamburger icon on smaller screens */
+  }
+}
+
+@media (max-width: 380px) {
+  nav a {
+    display: block;
+    margin: 6px auto;
+    width: 80%; /* center the buttons */
+  }
+}
+
+
 	
 	
 	/*Hyperlink design*/
@@ -352,33 +441,6 @@ nav a.active {
   overflow-wrap: break-word;
 }
 
-nav ul {
-  display: flex; /* horizontal menu with words */
-}
-.hamburger {
-  display: none; /* hide hamburger on desktop */
-}
-@media (max-width: 768px) {
-  nav ul {
-    display: none; /* hide horizontal menu */
-  }
-  .hamburger {
-    display: block; /* show hamburger icon */
-  }
-  nav ul.active {
-    display: block; /* show menu when active */
-    flex-direction: column;
-  }
-}
-
-	
-	@media (max-width: 380px) {
-  nav a {
-    display: block;
-    margin: 6px auto;
-    width: 80%; /* center the buttons */
-  }
-}
 
 	
 
