@@ -347,10 +347,30 @@ nav a.active {
       }
     }
 	
-	.person-card, .index-card {
+	.person-card, .index-card .index-card-container{
   word-break: break-word;
   overflow-wrap: break-word;
 }
+
+nav ul {
+  display: flex; /* horizontal menu with words */
+}
+.hamburger {
+  display: none; /* hide hamburger on desktop */
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* hide horizontal menu */
+  }
+  .hamburger {
+    display: block; /* show hamburger icon */
+  }
+  nav ul.active {
+    display: block; /* show menu when active */
+    flex-direction: column;
+  }
+}
+
 	
 	@media (max-width: 380px) {
   nav a {
