@@ -119,15 +119,12 @@ nav a:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   nav ul {
-    display: none; /* hide horizontal menu on smaller screens */
-    flex-direction: column; /* stack links vertically when shown */
+    display: flex; 
+    flex-direction: column;
     padding: 0;
   }
   nav ul.active {
     display: flex; /* show menu when active */
-  }
-  .hamburger {
-    display: block; /* show hamburger icon on smaller screens */
   }
 }
 
