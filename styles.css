@@ -90,6 +90,8 @@ nav ul {
 }
 
 
+
+
 /* Navigation links */
 nav a {
   color: var(--button-color);
@@ -99,18 +101,17 @@ nav a {
   border-radius: 4px;
   transition: background 0.15s;
   display: inline-block;
+  transition: color 0.15s, background 0.15s;
 }
 
 /* Active link */
 nav a.active {
-  background-color: var(--buttonactive-color);
-  box-shadow: 0 4px 12px rgba(145, 110, 200, 0.07);
+  font-weight: bold;
 }
 
 /* Hover state */
 nav a:hover {
-  background-color: var(--buttonhover-color);
-  box-shadow: 0 4px 8px rgba(145, 110, 200, 0.07);
+color: var(--buttonhover-color);
 }
 
 
@@ -373,17 +374,7 @@ nav a:hover {
        nav {
     margin-bottom: 26px;
   }
-  nav a {
-    display: inline-block;     /* or block if you want stacked */
-    margin: 6px 12px;          /* better spacing between links */
-    padding: 8px 12px;         /* bigger clickable area */
-    font-size: 1.1em;          /* slightly larger font for readability */
-    border-radius: 6px;
-    box-sizing: border-box;
-  }
-  nav a.active {
-    box-shadow: 0 6px 14px rgba(145, 110, 200, 0.12); /* a bit stronger shadow */
-  }
+
       }
       .person-card {
         width: 93vw;
