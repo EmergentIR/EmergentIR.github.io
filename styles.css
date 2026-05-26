@@ -75,6 +75,13 @@
       margin-bottom: 40px;
       font-size: 1.12em;
     }
+	nav ul {
+	  display: flex; 
+	  justify-content: center;
+	  padding: 0;
+	  margin: 0;
+	  list-style: none;
+	}
 	nav a {
 	  color: var(--button-color);
 	  text-decoration: none;
@@ -85,12 +92,32 @@
 	  display: inline-block;
 	  transition: color 0.15s, background 0.15s;
 	}
-nav a.active {
-	   font-weight: bold;
-	}
+	nav a.active {
+		   font-weight: bold;
+		}
     nav a:hover {
       color: var(--buttonhover-color);
     }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    display: flex; 
+    flex-direction: column;
+    padding: 0;
+  }
+  nav ul.active {
+    display: flex; /* show menu when active */
+  }
+}
+
+@media (max-width: 380px) {
+  nav a {
+    display: block;
+    margin: 6px auto;
+    width: 80%; /* center the buttons */
+  }
+}
 	
 	
 	/*Hyperlink design*/
